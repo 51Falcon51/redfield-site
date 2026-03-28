@@ -45,9 +45,9 @@ export default async function handler(req, res) {
                 fields: {
                   Name: name,
                   Email: email,
-                  Brand: brand || '',
-                  Interest: interest || '',
-                  Challenge: challenge || '',
+                  ...(brand && { Brand: brand }),
+                  ...(interest && { Interest: interest }),
+                  ...(challenge && { Challenge: challenge }),
                   Submitted: new Date().toISOString().split('T')[0],
                   Source: 'Website',
                 },
