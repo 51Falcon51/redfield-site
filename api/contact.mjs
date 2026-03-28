@@ -48,7 +48,7 @@ export default async function handler(req, res) {
                   Brand: brand || '',
                   Interest: interest || '',
                   Challenge: challenge || '',
-                  Submitted: submitted || new Date().toISOString(),
+                  Submitted: new Date().toISOString().split('T')[0],
                   Source: 'Website',
                 },
               },
